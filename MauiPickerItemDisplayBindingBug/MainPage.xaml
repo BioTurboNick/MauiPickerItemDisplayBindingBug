@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiPickerItemDisplayBindingBug"
+    x:Class="MauiPickerItemDisplayBindingBug.MainPage"
+    Background="{AppThemeBinding Dark={StaticResource Primary}}"
+    x:DataType="local:MainPageViewModel"
+    x:Name="root">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:IntToPowerConverter x:Key="intToPower" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid ColumnDefinitions="50,*,50,100">
+
+        <Label Text="Make"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                FontSize="16"
+                Margin="{OnPlatform Android='0,0,0,11', iOS='0,0,0,5'}" />
+
+        <Picker Grid.Column="2"
+                 FontSize="16"
+                 VerticalTextAlignment="End"
+                 SelectedItem="{Binding DesiredValuePower}"
+                 ItemDisplayBinding="{Binding Converter={StaticResource intToPower}}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:Int32}">
+                    <x:Int32>0</x:Int32>
+                    <x:Int32>1</x:Int32>
+                    <x:Int32>2</x:Int32>
+                    <x:Int32>3</x:Int32>
+                    <x:Int32>4</x:Int32>
+                    <x:Int32>5</x:Int32>
+                    <x:Int32>6</x:Int32>
+                    <x:Int32>7</x:Int32>
+                    <x:Int32>8</x:Int32>
+                    <x:Int32>9</x:Int32>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+    </Grid>
+
+</ContentPage>

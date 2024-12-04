@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--popup text color-->
+	<color name="colorPrimary">#2196F3</color>
+	<color name="colorPrimaryDark">#002855</color>
+	<color name="colorAccent">#2196F3</color>
+	<color name="hs_deep_blue">#125082</color>
+</resources>
